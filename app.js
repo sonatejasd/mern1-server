@@ -15,7 +15,11 @@ var app = express();
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'jade');
 
-app.use(cors({origin: "*"}));
+app.use(cors({
+  origin: 'https://mern1-98jmi7si6-sonas-projects-ff130e13.vercel.app', // Replace with your Vercel frontend URL
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type,Authorization'
+}));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
