@@ -16,10 +16,10 @@ var app = express();
 // app.set('view engine', 'jade');
 
 app.use(cors({
-  origin: 'https://mern1-student-registration.vercel.app', // Replace with your Vercel frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE','OPTIONS'],
-  allowedHeaders: ['Content-Type'],
-  credentials: true
+  origin: 'https://mern1-student-registration.vercel.app', // Your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed methods
+  allowedHeaders: ['Content-Type'], // Allowed headers
+  credentials: true // Allow credentials if needed
 }));
 app.options('*', cors());
 app.use(logger('dev'));
