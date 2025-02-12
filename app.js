@@ -17,9 +17,11 @@ var app = express();
 
 app.use(cors({
   origin: 'https://mern1-student-registration.vercel.app', // Replace with your Vercel frontend URL
-  methods: ['GET,POST,PUT,DELETE'],
-  
+  methods: ['GET', 'POST', 'PUT', 'DELETE','OPTIONS'],
+  allowedHeaders: ['Content-Type'],
+  credentials: true
 }));
+app.options('*', cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
