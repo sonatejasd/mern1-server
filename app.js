@@ -16,7 +16,7 @@ var app = express();
 // app.set('view engine', 'jade');
 
 app.use(cors({
-  origin: 'https://mern1-98jmi7si6-sonas-projects-ff130e13.vercel.app', // Replace with your Vercel frontend URL
+  origin: 'https://mern1-student-registration.vercel.app', // Replace with your Vercel frontend URL
   methods: 'GET,POST,PUT,DELETE',
   allowedHeaders: 'Content-Type,Authorization'
 }));
