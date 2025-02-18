@@ -14,9 +14,19 @@ var app = express();
 // // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'jade');
-
+const allowedOrigins = [
+  'https://mern1-student-registration.vercel.app',
+  'https://localhost:3000', // Add more origins as needed
+  'http://localhost:3001' // Allow local development
+];
 app.use(cors({
-  origin: 'https://mern1-student-registration.vercel.app', // Your frontend URL
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true); // Allow request
+    } else {
+      callback(new Error('Not allowed by CORS')); // Reject request
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed methods
   allowedHeaders: ['Content-Type'], // Allowed headers
   credentials: true // Allow credentials if needed

@@ -11,15 +11,13 @@ router.post('/register', async function(req, res, next){
     const db = await getDB();
     const collection = db.collection("student");
     const result = await collection.insertOne(data);
-    res.send(`Successfully inserted ${data.rno} with acknowledgement: ${result.acknowledged}`);
+    res.send(`Successfully inserted ${data.rno} with acknowledgement: ${res.acknowledged}`);
     }catch(err){
         res.send(err.message);
     }
 });
 
 router.get('/allStudents', async function(req, res, next){
-    
-    
     try{
     const db = await getDB();
     const collection = db.collection("student");
