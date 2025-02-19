@@ -16,7 +16,7 @@ var app = express();
 // app.set('view engine', 'jade');
 const allowedOrigins = [
   'https://mern1-student-registration.vercel.app',
-  'http://localhost:3000/', // Add more origins as needed
+  'http://localhost:3000', // Add more origins as needed
   'http://localhost:3001' // Allow local development
 ];
 app.use(cors({
