@@ -7,7 +7,6 @@ var validateToken = require('../common/validateUser')
 
 router.post('/register', validateToken, async function(req, res, next){
     const data = req.body.data;
-    console.log(data);
     try{
     const db = await getDB();
     const collection = db.collection("student");
