@@ -11,9 +11,9 @@ router.post('/register', validateToken, async function(req, res, next){
     const db = await getDB();
     const collection = db.collection("student");
     const result = await collection.insertOne(data);
-    res.send(`Successfully inserted ${data.rno} with ackknowledgement: ${result.acknowledged}`);
+    res.send({status : `Successfully inserted ${data.rno} with ackknowledgement: ${result.acknowledged}`});
     }catch(err){
-        res.send(err.message);
+        res.send({status: err.message});
     }
 });
 
